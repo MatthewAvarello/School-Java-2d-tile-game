@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 
 public class Main {
     public static void main(String[] args) {
+        TileManager.initializeTiles();
+        
         JFrame game = new JFrame("My 2d Pixel Game!");
         GamePanel panel = new GamePanel();
         game.add(panel);

@@ -12,6 +12,11 @@ public class GamePanel extends JPanel {
     protected void paintComponent(Graphics g) {
         // TODO Auto-generated method stub
         g.setColor(Color.black);
-        g.fillRect(ALLBITS, ABORT, 136, 16);
+        for(int i = 1; i < 5; i++){
+            System.out.println("test");
+            //g.fillRect(i * 16, i * 16, 16 + i, 16 - i);
+            g.drawImage(TileManager.tiles[0].getImage(), i * 16, 1, getFocusCycleRootAncestor());
+        }
+        
     }
 }
