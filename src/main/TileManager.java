@@ -7,33 +7,37 @@ import java.nio.file.Paths;
 
 import javax.imageio.ImageIO;
 public class TileManager {
-
+    //Sets constants for each tile to be represented on tile map(not all tiles implemented as im debugging)
+    //static as this class is really just data
     public static final int TILE_NUM_WATER = 0; 
     public static final int TILE_NUM_GRASS = 1; 
     public static final int TILE_NUM_DIRT = 2; 
-
+    //array for tiles to be stored
     public static Tile[] tiles;
 
+
     public static void initializeTiles() {
-        tiles = new Tile[3];
+        tiles = new Tile[Constants.AMOUNT_OF_TILES];
+        //wrapped in a try cath block in case images dont load
         try {
+            //Get file paths
             Path waterPath = Paths.get("src/resources/tiles/Water.png");
             Path grassPath = Paths.get("src/resources/tiles/Grass.png");
             Path dirtPath  = Paths.get("src/resources/tiles/Dirt.png");
-        
+            
+            //use file paths to load a image
             BufferedImage waterImage = ImageIO.read(waterPath.toFile());
             BufferedImage grassImage = ImageIO.read(grassPath.toFile());
             BufferedImage dirtImage = ImageIO.read(dirtPath.toFile());
 
+            //make the tiles with the image, solid attribute and uses constants to choose where its placed in array
             tiles[TILE_NUM_WATER] = new Tile(false, waterImage);
             tiles[TILE_NUM_GRASS] = new Tile(true, grassImage);
             tiles[TILE_NUM_DIRT] = new Tile(true, dirtImage);
 
-            System.out.println();
-
-        } catch (IOException error) {
+        } catch (IOException error) { //logs error
             System.out.println(error.getMessage());
-            System.out.println("ERROR");
+            System.out.println("Error 404: Image not found");
         }
     }
 }
