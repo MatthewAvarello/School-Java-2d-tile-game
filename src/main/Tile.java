@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 
 public class Tile {
-    //Image to display on tile and whether tile is solid or not(determines if player can walk ovet it)
+    //Image to display on tile and whether tile is solid or not(determines if player can walk over it)
     private BufferedImage image;
     private boolean solid;
 

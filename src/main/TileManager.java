@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 import javax.imageio.ImageIO;
 public class TileManager {
-    //Sets constants for each tile to be represented on tile map(not all tiles implemented as im debugging)
+    //Sets constants for each tile to be represented on tile map(Did not have enough times for all tiles)
     //static as this class is really just data
     public static final int TILE_NUM_WATER = 0; 
     public static final int TILE_NUM_GRASS = 1; 
@@ -18,7 +18,7 @@ public class TileManager {
 
     public static void initializeTiles() {
         tiles = new Tile[Constants.AMOUNT_OF_TILES];
-        //wrapped in a try cath block in case images dont load
+        //wrapped in a try catch block in case images dont load
         try {
             //Get file paths
             Path waterPath = Paths.get("src/resources/tiles/Water.png");
@@ -35,7 +35,7 @@ public class TileManager {
             tiles[TILE_NUM_GRASS] = new Tile(true, grassImage);
             tiles[TILE_NUM_DIRT] = new Tile(true, dirtImage);
 
-        } catch (IOException error) { //logs error
+        } catch (IOException error) { //logs error to console
             System.out.println(error.getMessage());
             System.out.println("Error 404: Image not found");
         }

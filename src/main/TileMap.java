@@ -1,7 +1,7 @@
 package main;
 
 public class TileMap {
-    //Due to the map being base doff jsut height and width it has to either be a rectangle or square
+    //Due to the map being just straight height and width it has to either be a rectangle or square
     private int height;//height of tile map
     private int width;//width of tile map
     int[][] map;//where the numbers that represent the tiles are stored

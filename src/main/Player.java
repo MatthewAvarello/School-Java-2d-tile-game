@@ -12,7 +12,7 @@ public class Player {
         worldY = y;
     }
 
-    public void update(TileMap map) {//Tilemap from ganepanel
+    public void update(TileMap map) {//Tilemap from gamepanel
         //represents cordinate of where player wants to move to next
         int nextX = worldX;
         int nextY = worldY;
@@ -46,8 +46,6 @@ public class Player {
 
     //Changes a certain movement variable to true if certain keys are pressed
     public void keyPressed(KeyEvent e) {
-        System.out.println("Button Pressed");
-        System.out.println(e.getKeyCode());
         if (e.getKeyCode() == KeyEvent.VK_W){
             up = true;
         } else if (e.getKeyCode() == KeyEvent.VK_S){
@@ -60,8 +58,7 @@ public class Player {
     }
 
     //When key is let go stop the movement of player
-    public void keyReleased(KeyEvent e) {
-        System.out.println("button released");
+    public void keyReleased(KeyEvent e) {);
         if (e.getKeyCode() == KeyEvent.VK_W){
             up = false;
         } else if (e.getKeyCode() == KeyEvent.VK_S){

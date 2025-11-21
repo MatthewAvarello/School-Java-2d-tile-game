@@ -78,20 +78,8 @@ public class GamePanel extends JPanel implements KeyListener {
     }
     @Override
     protected void paintComponent(Graphics g) {
-        g.setColor(Color.black);/* 
-        for(int i = 1; i < 12; i++){
-            for (int j = 0; j < 12; j++){
-                if (j % 3 == 0){
-                    g.drawImage(TileManager.tiles[0].getImage(), i * Constants.TILE_SIZE, j* Constants.TILE_SIZE, getFocusCycleRootAncestor());
-                }
-                if (j % 3 == 1){
-                    g.drawImage(TileManager.tiles[1].getImage(), i * Constants.TILE_SIZE, Constants.TILE_SIZE, getFocusCycleRootAncestor());
-                }
-                if (j % 3 == 2){
-                    g.drawImage(TileManager.tiles[2].getImage(), i * Constants.TILE_SIZE, Constants.TILE_SIZE, getFocusCycleRootAncestor());
-                }
-            }
-        }*/
+        super.paintComponent(g);
+        g.setColor(Color.black)
         for (int y = 0; y < tileMap.getHeight(); y++) {
             for (int x = 0; x < tileMap.getWidth(); x++) {
                 int tileId = tileMap.getTileId(x, y);
